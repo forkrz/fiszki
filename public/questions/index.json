@@ -1,0 +1,11 @@
+{
+  "version": "2026-11-19",
+  "categories": [
+    {
+      "id": "sieci",
+      "name": "Sieci",
+      "description": "CompTIA Network+ (N10-009) – Professor Messer",
+      "file": "sieci.json"
+    }
+  ]
+}

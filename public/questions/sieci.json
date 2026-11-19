@@ -1,0 +1,313 @@
+[
+  {
+    "id": "osi-001",
+    "topic": "Model OSI",
+    "question": "Na której warstwie modelu OSI działa router?",
+    "answers": ["Fizycznej (1)", "Łącza danych (2)", "Sieciowej (3)", "Transportowej (4)"],
+    "correct": 2,
+    "explanation": "Router przekazuje pakiety na podstawie adresów IP, a to warstwa 3 – sieciowa."
+  },
+  {
+    "id": "osi-002",
+    "topic": "Model OSI",
+    "question": "Na której warstwie OSI działa klasyczny switch (przełącznik)?",
+    "answers": ["Fizycznej (1)", "Łącza danych (2)", "Sieciowej (3)", "Aplikacji (7)"],
+    "correct": 1,
+    "explanation": "Switch przełącza ramki na podstawie adresów MAC – warstwa 2. Switche L3 dodatkowo routują, ale klasyczny switch to L2."
+  },
+  {
+    "id": "osi-003",
+    "topic": "Model OSI",
+    "question": "Jak nazywa się jednostka danych (PDU) protokołu TCP na warstwie transportowej?",
+    "answers": ["Ramka", "Pakiet", "Segment", "Bit"],
+    "correct": 2,
+    "explanation": "TCP → segment, UDP → datagram (warstwa 4). Pakiet to warstwa 3, ramka warstwa 2, bity warstwa 1."
+  },
+  {
+    "id": "osi-004",
+    "topic": "Model OSI",
+    "question": "Jak nazywa się PDU na warstwie łącza danych (L2)?",
+    "answers": ["Ramka", "Pakiet", "Segment", "Datagram"],
+    "correct": 0,
+    "explanation": "Na warstwie 2 dane są opakowane w ramkę (frame) z adresami MAC."
+  },
+  {
+    "id": "osi-005",
+    "topic": "Model OSI",
+    "question": "Która warstwa OSI ma numer 5?",
+    "answers": ["Prezentacji", "Transportowa", "Sesji", "Aplikacji"],
+    "correct": 2,
+    "explanation": "Od dołu: 1 Fizyczna, 2 Łącza danych, 3 Sieciowa, 4 Transportowa, 5 Sesji, 6 Prezentacji, 7 Aplikacji."
+  },
+  {
+    "id": "osi-006",
+    "topic": "Model OSI",
+    "question": "Która warstwa OSI odpowiada za kodowanie znaków i szyfrowanie danych (np. formatowanie, kompresję)?",
+    "answers": ["Sesji (5)", "Prezentacji (6)", "Aplikacji (7)", "Transportowa (4)"],
+    "correct": 1,
+    "explanation": "Warstwa prezentacji (6) zajmuje się formą danych: kodowaniem, kompresją, szyfrowaniem."
+  },
+  {
+    "id": "osi-007",
+    "topic": "Model OSI",
+    "question": "Na której warstwie OSI działają kable, złącza i sygnały elektryczne?",
+    "answers": ["Fizycznej (1)", "Łącza danych (2)", "Sieciowej (3)", "Sesji (5)"],
+    "correct": 0,
+    "explanation": "Warstwa fizyczna to medium transmisyjne: kable, światłowody, sygnały, złącza."
+  },
+  {
+    "id": "osi-008",
+    "topic": "Model OSI",
+    "question": "Jak nazywa się dodawanie nagłówków przez kolejne warstwy podczas przesyłania danych w dół stosu?",
+    "answers": ["Fragmentacja", "Dekapsulacja", "Multipleksacja", "Enkapsulacja"],
+    "correct": 3,
+    "explanation": "Enkapsulacja – każda warstwa „opakowuje” dane swoim nagłówkiem. Po stronie odbiorcy zachodzi dekapsulacja."
+  },
+  {
+    "id": "osi-009",
+    "topic": "Model OSI",
+    "question": "Na której warstwie OSI działają porty TCP i UDP?",
+    "answers": ["Sieciowej (3)", "Transportowej (4)", "Sesji (5)", "Łącza danych (2)"],
+    "correct": 1,
+    "explanation": "Numery portów są częścią nagłówków TCP/UDP – warstwa 4."
+  },
+  {
+    "id": "adr-001",
+    "topic": "Adresacja",
+    "question": "Ile bitów ma adres MAC?",
+    "answers": ["32", "48", "64", "128"],
+    "correct": 1,
+    "explanation": "MAC ma 48 bitów (6 bajtów), zapisywany np. jako 00:1A:2B:3C:4D:5E. Pierwsze 24 bity to OUI producenta."
+  },
+  {
+    "id": "adr-002",
+    "topic": "Adresacja",
+    "question": "Ile bitów ma adres IPv4?",
+    "answers": ["16", "32", "48", "128"],
+    "correct": 1,
+    "explanation": "IPv4 to 32 bity zapisane jako 4 oktety, np. 192.168.1.10. IPv6 ma 128 bitów."
+  },
+  {
+    "id": "adr-003",
+    "topic": "Adresacja",
+    "question": "Który z adresów należy do prywatnej puli IPv4 (RFC 1918)?",
+    "answers": ["172.32.0.1", "11.0.0.1", "172.20.5.1", "192.169.1.1"],
+    "correct": 2,
+    "explanation": "Prywatne zakresy: 10.0.0.0/8, 172.16.0.0/12 (172.16–172.31), 192.168.0.0/16. 172.20.5.1 mieści się w 172.16–31."
+  },
+  {
+    "id": "adr-004",
+    "topic": "Adresacja",
+    "question": "Komputer dostał adres 169.254.12.34. Co to najczęściej oznacza?",
+    "answers": [
+      "Ma poprawny adres publiczny",
+      "Nie otrzymał adresu z serwera DHCP (APIPA)",
+      "Jest podłączony przez VPN",
+      "Używa adresu loopback"
+    ],
+    "correct": 1,
+    "explanation": "169.254.0.0/16 to APIPA / link-local – system nadaje go sam, gdy DHCP nie odpowiada. Klasyczny objaw problemu z DHCP."
+  },
+  {
+    "id": "adr-005",
+    "topic": "Adresacja",
+    "question": "Jaki adres IPv4 jest adresem pętli zwrotnej (loopback)?",
+    "answers": ["0.0.0.0", "127.0.0.1", "255.255.255.255", "192.168.0.1"],
+    "correct": 1,
+    "explanation": "Cała pula 127.0.0.0/8 to loopback, najczęściej używa się 127.0.0.1 (localhost). W IPv6 to ::1."
+  },
+  {
+    "id": "adr-006",
+    "topic": "Adresacja",
+    "question": "Ile użytecznych adresów hostów jest w podsieci /24?",
+    "answers": ["256", "255", "254", "128"],
+    "correct": 2,
+    "explanation": "/24 → 8 bitów na hosty → 2^8 = 256 adresów, minus adres sieci i broadcast = 254."
+  },
+  {
+    "id": "adr-007",
+    "topic": "Adresacja",
+    "question": "Która maska odpowiada prefiksowi /26?",
+    "answers": ["255.255.255.0", "255.255.255.128", "255.255.255.192", "255.255.255.224"],
+    "correct": 2,
+    "explanation": "/26 = 24 bity + 2 bity w ostatnim oktecie (128 + 64 = 192) → 255.255.255.192, 62 hosty."
+  },
+  {
+    "id": "adr-008",
+    "topic": "Adresacja",
+    "question": "Jaki jest adres rozgłoszeniowy (broadcast) sieci 192.168.1.0/24?",
+    "answers": ["192.168.1.0", "192.168.1.1", "192.168.1.254", "192.168.1.255"],
+    "correct": 3,
+    "explanation": "Broadcast to adres z samymi jedynkami w części hosta – dla /24 to .255."
+  },
+  {
+    "id": "adr-009",
+    "topic": "Adresacja",
+    "question": "Ile bitów ma adres IPv6?",
+    "answers": ["32", "64", "128", "256"],
+    "correct": 2,
+    "explanation": "IPv6 ma 128 bitów, zapisywany szesnastkowo w 8 grupach, np. 2001:db8::1."
+  },
+  {
+    "id": "por-001",
+    "topic": "Porty i protokoły",
+    "question": "Jaki port domyślnie używa SSH?",
+    "answers": ["21", "22", "23", "25"],
+    "correct": 1,
+    "explanation": "SSH – TCP 22. 21 to FTP (sterowanie), 23 to Telnet, 25 to SMTP."
+  },
+  {
+    "id": "por-002",
+    "topic": "Porty i protokoły",
+    "question": "Na jakim porcie działa DNS?",
+    "answers": ["53", "67", "80", "123"],
+    "correct": 0,
+    "explanation": "DNS – port 53 (UDP dla zapytań, TCP m.in. dla transferów stref i dużych odpowiedzi)."
+  },
+  {
+    "id": "por-003",
+    "topic": "Porty i protokoły",
+    "question": "Jaki port domyślnie używa HTTPS?",
+    "answers": ["80", "8080", "443", "8443"],
+    "correct": 2,
+    "explanation": "HTTPS – TCP 443, HTTP – TCP 80."
+  },
+  {
+    "id": "por-004",
+    "topic": "Porty i protokoły",
+    "question": "Jaki port domyślnie używa RDP (Pulpit zdalny Windows)?",
+    "answers": ["3306", "3389", "5900", "445"],
+    "correct": 1,
+    "explanation": "RDP – TCP 3389. 3306 to MySQL, 5900 to VNC, 445 to SMB. W SOC 3389 wystawione do internetu to częsty alarm."
+  },
+  {
+    "id": "por-005",
+    "topic": "Porty i protokoły",
+    "question": "Który protokół służy do WYSYŁANIA poczty między serwerami i domyślnie działa na porcie 25?",
+    "answers": ["IMAP", "POP3", "SMTP", "SNMP"],
+    "correct": 2,
+    "explanation": "SMTP – TCP 25. IMAP (143) i POP3 (110) służą do pobierania poczty przez klienta."
+  },
+  {
+    "id": "por-006",
+    "topic": "Porty i protokoły",
+    "question": "Jakie porty i protokół transportowy wykorzystuje DHCP (IPv4)?",
+    "answers": ["TCP 67/68", "UDP 67/68", "UDP 53", "TCP 161/162"],
+    "correct": 1,
+    "explanation": "DHCP – UDP 67 (serwer) i UDP 68 (klient)."
+  },
+  {
+    "id": "por-007",
+    "topic": "Porty i protokoły",
+    "question": "Na jakim porcie działa SMB (udostępnianie plików w Windows)?",
+    "answers": ["139", "389", "445", "636"],
+    "correct": 2,
+    "explanation": "SMB – TCP 445 (139 to starszy NetBIOS). 389 to LDAP, 636 to LDAPS."
+  },
+  {
+    "id": "por-008",
+    "topic": "Porty i protokoły",
+    "question": "Jaki port domyślnie używa LDAP?",
+    "answers": ["389", "636", "88", "443"],
+    "correct": 0,
+    "explanation": "LDAP – 389, LDAPS (szyfrowany) – 636, Kerberos – 88. Wszystkie ważne przy Active Directory."
+  },
+  {
+    "id": "por-009",
+    "topic": "Porty i protokoły",
+    "question": "Na jakim porcie działa NTP (synchronizacja czasu)?",
+    "answers": ["UDP 69", "UDP 123", "UDP 161", "UDP 514"],
+    "correct": 1,
+    "explanation": "NTP – UDP 123. 69 to TFTP, 161 SNMP, 514 Syslog. Poprawny czas jest kluczowy do korelacji logów w SIEM."
+  },
+  {
+    "id": "por-010",
+    "topic": "Porty i protokoły",
+    "question": "Na jakim porcie domyślnie działa Syslog?",
+    "answers": ["UDP 514", "TCP 22", "UDP 161", "TCP 3389"],
+    "correct": 0,
+    "explanation": "Syslog – UDP 514 (TLS zwykle 6514). To podstawowy sposób wysyłania logów do SIEM."
+  },
+  {
+    "id": "por-011",
+    "topic": "Porty i protokoły",
+    "question": "Jaki port domyślnie używa Telnet i dlaczego się go unika?",
+    "answers": [
+      "22 – bo jest wolny",
+      "23 – bo przesyła dane (w tym hasła) otwartym tekstem",
+      "25 – bo służy tylko do poczty",
+      "21 – bo nie obsługuje plików"
+    ],
+    "correct": 1,
+    "explanation": "Telnet – TCP 23, brak szyfrowania. Zastępuje go SSH (22)."
+  },
+  {
+    "id": "pro-001",
+    "topic": "Protokoły",
+    "question": "Który protokół jest połączeniowy i gwarantuje dostarczenie danych?",
+    "answers": ["UDP", "TCP", "ICMP", "IP"],
+    "correct": 1,
+    "explanation": "TCP zestawia połączenie, numeruje segmenty, potwierdza je i retransmituje zgubione. UDP jest bezpołączeniowy."
+  },
+  {
+    "id": "pro-002",
+    "topic": "Protokoły",
+    "question": "Jaka jest kolejność flag w trójstopniowym uzgadnianiu (3-way handshake) TCP?",
+    "answers": ["SYN → ACK → FIN", "SYN → SYN-ACK → ACK", "ACK → SYN → SYN-ACK", "SYN → RST → ACK"],
+    "correct": 1,
+    "explanation": "Klient: SYN, serwer: SYN-ACK, klient: ACK. Masa SYN bez ACK to np. SYN flood albo skanowanie."
+  },
+  {
+    "id": "pro-003",
+    "topic": "Protokoły",
+    "question": "Do czego służy protokół ARP?",
+    "answers": [
+      "Tłumaczy nazwy domen na adresy IP",
+      "Przydziela adresy IP",
+      "Znajduje adres MAC dla danego adresu IP w sieci lokalnej",
+      "Szyfruje ruch w LAN"
+    ],
+    "correct": 2,
+    "explanation": "ARP mapuje IP → MAC w obrębie LAN. Nazwy na IP tłumaczy DNS, adresy przydziela DHCP. Atak: ARP spoofing."
+  },
+  {
+    "id": "pro-004",
+    "topic": "Protokoły",
+    "question": "Z którego protokołu korzysta polecenie ping?",
+    "answers": ["TCP", "UDP", "ICMP", "ARP"],
+    "correct": 2,
+    "explanation": "ping wysyła ICMP Echo Request i czeka na Echo Reply."
+  },
+  {
+    "id": "pro-005",
+    "topic": "Protokoły",
+    "question": "Jak nazywa się technika, w której wiele urządzeń z adresami prywatnymi korzysta z jednego adresu publicznego, rozróżniane numerami portów?",
+    "answers": ["VLAN", "PAT (NAT overload)", "DHCP relay", "STP"],
+    "correct": 1,
+    "explanation": "PAT, czyli NAT z przeciążeniem – tak działa typowy router domowy."
+  },
+  {
+    "id": "kab-001",
+    "topic": "Okablowanie",
+    "question": "Jaka jest maksymalna długość segmentu skrętki miedzianej w standardowym Ethernecie (np. Cat5e/Cat6, 1 Gb/s)?",
+    "answers": ["50 m", "100 m", "185 m", "500 m"],
+    "correct": 1,
+    "explanation": "Dla skrętki w Ethernecie limit to 100 m na segment."
+  },
+  {
+    "id": "kab-002",
+    "topic": "Okablowanie",
+    "question": "Który światłowód nadaje się na większe odległości?",
+    "answers": ["Wielomodowy (multimode)", "Jednomodowy (single-mode)", "Oba tak samo", "Skrętka STP"],
+    "correct": 1,
+    "explanation": "Jednomodowy (cienki rdzeń, laser) – kilometry/dziesiątki km. Wielomodowy – krótsze dystanse, np. w budynku."
+  },
+  {
+    "id": "kab-003",
+    "topic": "Okablowanie",
+    "question": "Jakie złącze stosuje się typowo w kablu Ethernet ze skrętki?",
+    "answers": ["RJ11", "RJ45 (8P8C)", "LC", "BNC"],
+    "correct": 1,
+    "explanation": "RJ45/8P8C – 8 pinów. RJ11 to telefon, LC to złącze światłowodowe, BNC – kabel koncentryczny."
+  }
+]
